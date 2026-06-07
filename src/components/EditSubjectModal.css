@@ -1,0 +1,216 @@
+.edit-subject-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 6, 17, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1100;
+  animation: overlayFadeIn 0.25s ease;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card */
+.edit-subject-modal {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(20, 16, 29, 0.95);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 20px;
+  padding: 36px 36px 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  animation: modalSlideIn 0.3s ease;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(139, 92, 246, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.edit-subject-modal::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+.edit-subject-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.edit-subject-modal__title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.edit-subject-modal__icon {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f4f0ff;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+}
+
+.edit-subject-modal__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.edit-subject-modal__subtitle {
+  margin-top: 3px;
+}
+
+/* Close Button */
+.edit-subject-modal__close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(30, 27, 40, 0.6);
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.edit-subject-modal__close-btn:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #e5e7eb;
+}
+
+/* Divider */
+.edit-subject-modal__divider {
+  height: 1px;
+  background: rgba(139, 92, 246, 0.15);
+  margin-bottom: 24px;
+}
+
+/* Currently editing badge */
+.edit-subject-modal__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 10px 14px;
+  background: rgba(139, 92, 246, 0.07);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 10px;
+}
+
+.edit-subject-modal__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a855f7;
+  flex-shrink: 0;
+}
+
+.edit-subject-modal__badge-value {
+  font-size: 12px;
+  color: #c084fc;
+  font-weight: 500;
+}
+
+/* Required asterisk */
+.edit-subject-modal__required {
+  color: #ec4899;
+  margin-left: 2px;
+}
+
+/* Textarea */
+.edit-subject-modal__textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.5;
+}
+
+/* Hours input with suffix */
+.edit-subject-modal__input-wrapper {
+  position: relative;
+}
+
+.edit-subject-modal__hours-input {
+  padding-right: 80px;
+}
+
+.edit-subject-modal__input-suffix {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #6b7280;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Hint text */
+.edit-subject-modal__hint {
+  margin-top: 6px;
+}
+
+/* Footer */
+.edit-subject-modal__footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.edit-subject-modal__footer .btn {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .edit-subject-modal {
+    padding: 28px 24px 24px;
+    border-radius: 16px;
+  }
+
+  .edit-subject-modal__title {
+    font-size: 18px;
+  }
+
+  .edit-subject-modal__footer {
+    flex-direction: column;
+  }
+}

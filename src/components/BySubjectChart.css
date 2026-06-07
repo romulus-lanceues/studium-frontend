@@ -1,0 +1,120 @@
+.category-chart-card {
+  flex: 1;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 300px;
+  overflow: hidden;
+}
+
+.subject-chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.chart-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subject-chart-content {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(150px, 1fr) auto;
+  gap: 18px;
+}
+
+.donut-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+}
+
+.donut-center {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.donut-center span {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.donut-center small {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.subject-list {
+  display: grid;
+  gap: 12px;
+}
+
+.subject-row {
+  display: grid;
+  gap: 7px;
+}
+
+.subject-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.subject-name {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subject-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.subject-percent {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.subject-progress {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.subject-progress span {
+  display: block;
+  height: 100%;
+  min-width: 3px;
+  border-radius: inherit;
+}

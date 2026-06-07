@@ -1,0 +1,371 @@
+/* Dashboard Page Container */
+.dashboard-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  position: relative;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.dashboard-date {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  width: 48px;
+  height: 48px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  padding: 0;
+}
+
+.menu-toggle:hover {
+  background: var(--input-bg-focus);
+  border-color: var(--border-focus);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+.menu-toggle:active {
+  transform: translateY(0);
+}
+
+.menu-line {
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover .menu-line {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+}
+
+/* Stats Cards Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animated bottom accent line on hover */
+.stat-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.stat-card:hover::after {
+  transform: scaleX(1);
+}
+
+.stat-icon {
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.stat-icon.purple {
+  background: rgba(139, 92, 246, 0.15);
+}
+.stat-icon.pink {
+  background: rgba(236, 72, 153, 0.15);
+}
+.stat-icon.blue {
+  background: rgba(59, 130, 246, 0.15);
+}
+.stat-icon.green {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e5e7eb 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-change {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-change.up {
+  color: #4ade80;
+}
+.stat-change.down {
+  color: #f87171;
+}
+
+.charts-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  height: 350px;
+  margin-bottom: 50px;
+}
+
+/* History Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table thead {
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.history-table th {
+  text-align: left;
+  padding: 16px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.history-table td {
+  padding: 20px 16px;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.history-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.history-table tbody tr:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-incomplete {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-in-progress {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a855f7;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.pagination-btn {
+  min-width: 120px;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .header-content {
+    gap: 16px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-line {
+    width: 18px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+
+  .dashboard-date {
+    font-size: 14px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pagination-btn {
+    width: 100%;
+  }
+
+  .charts-row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .daily-chart-card,
+  .category-chart-card {
+    min-height: 340px;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 480px) {
+  .dashboard-page {
+    padding: 24px 16px;
+  }
+
+  .header-content {
+    gap: 16px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-line {
+    width: 18px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+
+  .dashboard-date {
+    font-size: 14px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  /* Make table scrollable on very small screens */
+  .table-container {
+    margin: 0 -12px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 12px;
+  }
+}

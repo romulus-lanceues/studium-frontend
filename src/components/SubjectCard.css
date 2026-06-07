@@ -1,0 +1,207 @@
+.subject-card {
+  position: relative;
+  background: var(--card-bg, rgba(20, 16, 29, 0.8));
+  border: 1px solid var(--border-default, rgba(139, 92, 246, 0.2));
+  border-radius: 20px;
+  padding: 28px 24px 22px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Slide-up entrance animation */
+  opacity: 0;
+  animation: cardEntrance 0.5s ease forwards;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-active, rgba(139, 92, 246, 0.3));
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.2);
+}
+
+/* ── Glow Blob ──────────────────────────── */
+.subject-card__glow {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0.12;
+  filter: blur(24px);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.subject-card:hover .subject-card__glow {
+  opacity: 0.22;
+}
+
+/* ── Top Row ────────────────────────────── */
+.subject-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.subject-card__icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.25) 0%,
+    rgba(168, 85, 247, 0.15) 100%
+  );
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.subject-card:hover .subject-card__icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+/* ── Three-dot Menu ─────────────────────── */
+.subject-card__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  border-radius: 8px;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.subject-card:hover .subject-card__menu {
+  opacity: 1;
+}
+
+.subject-card__menu:hover {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.subject-card__menu span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted, #6b7280);
+}
+
+/* ── Name ───────────────────────────────── */
+.subject-card__name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary, #e5e7eb);
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+/* ── Stats ──────────────────────────────── */
+.subject-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.subject-card__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 2px;
+}
+
+.subject-card__stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary, #e5e7eb);
+  line-height: 1;
+}
+
+.subject-card__stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.subject-card__stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(139, 92, 246, 0.2);
+}
+
+/* ── Footer ─────────────────────────────── */
+.subject-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subject-card__last {
+  font-size: 12px;
+  color: var(--text-muted, #6b7280);
+}
+
+.subject-card__start {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.subject-card__start::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.subject-card__start:hover::before {
+  left: 100%;
+}

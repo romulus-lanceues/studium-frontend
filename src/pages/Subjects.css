@@ -1,0 +1,178 @@
+.subjects-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+}
+.subjects-header {
+  position: relative;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.subjects-header h1 {
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.subjects-content {
+  padding: 32px 0;
+}
+
+/* ── Summary Bar ────────────────────────── */
+.subjects-summary {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 28px;
+  background: var(--card-bg, rgba(20, 16, 29, 0.8));
+  border: 1px solid var(--border-default, rgba(139, 92, 246, 0.2));
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.subjects-summary__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.subjects-summary__value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.subjects-summary__label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.subjects-summary__add {
+  margin-left: auto;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* ── Grid ───────────────────────────────── */
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── Add New Card ───────────────────────── */
+.subjects-add-card {
+  border: 1px dashed rgba(139, 92, 246, 0.25);
+  border-radius: 20px;
+  background: rgba(20, 16, 29, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subjects-add-card:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(139, 92, 246, 0.06);
+  transform: translateY(-4px);
+}
+
+.subjects-add-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.subjects-add-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: 2px dashed rgba(139, 92, 246, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--purple-primary, #8b5cf6);
+  transition: all 0.3s ease;
+}
+
+.subjects-add-card:hover .subjects-add-card__icon {
+  border-color: rgba(139, 92, 246, 0.7);
+  background: rgba(139, 92, 246, 0.1);
+  transform: scale(1.1);
+}
+
+/* ── Pagination ─────────────────────────── */
+.subjects-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.subjects-pagination__btn {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  /* Inherits .btn and .btn-primary / .btn-secondary from style.css */
+}
+
+.subjects-pagination__indicator {
+  min-width: 80px;
+  text-align: center;
+}
+
+.subjects-pagination__indicator strong {
+  color: var(--text-primary, #e5e7eb);
+  font-weight: 600;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 1024px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .subjects-summary {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .subjects-summary__add {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subjects-content {
+    padding: 20px 0;
+  }
+}
