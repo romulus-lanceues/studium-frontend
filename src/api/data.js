@@ -1,13 +1,10 @@
 import { client } from "./client.js";
 
-//log errrors for the meantime, will handle them properly later
-
 export const getDashboardData = async () => {
   try {
     const request = await client.get("/api/v1/data/dashboard");
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -23,7 +20,6 @@ export const getUserSessionHistory = async (page, size = 5) => {
 
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -33,7 +29,6 @@ export const getSubjectPageData = async () => {
     const request = await client.get("/api/v1/data/subjects-data");
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -48,7 +43,6 @@ export const getUserSubjects = async (pageNumber = 0, pageSize = 6) => {
     });
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -67,7 +61,6 @@ export const getSubjectSessionHistory = async (
     });
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -85,7 +78,6 @@ export const getMonthlySummary = async (month) => {
 
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -103,7 +95,6 @@ export const getMonthlySubjectDistribution = async (month) => {
 
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -113,7 +104,6 @@ export const getWeeklyData = async () => {
     const request = await client.get("/api/v1/data/week/overview");
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };

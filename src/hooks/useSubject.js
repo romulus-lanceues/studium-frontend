@@ -12,7 +12,6 @@ export default function useSubject(setFullScreenLoading) {
   useEffect(() => {
     const fetchSubjectPageData = async () => {
       const data = await getSubjectPageData();
-      console.log("Fetched subjects page data:", data);
       setTotalSubjects(data.totalSubjects);
       setTotalSessions(data.totalSessions);
       setTotalHours(data.totalHours);
@@ -40,7 +39,6 @@ export default function useSubject(setFullScreenLoading) {
   useEffect(() => {
     const fetchSubjects = async () => {
       const subjects = await getUserSubjects(currentPage);
-      console.log("Fetched subjects for page", currentPage, subjects);
       setSubjects(subjects.content);
       setCurrentPage(subjects.pageNumber);
       setTotalPages(subjects.totalPages);

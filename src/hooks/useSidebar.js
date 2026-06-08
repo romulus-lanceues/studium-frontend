@@ -4,7 +4,6 @@ export default function useSidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   function toggleSidebar() {
-    console.log("Toggling sidebar");
     setIsSidebarOpen(!isSidebarOpen);
   }
 

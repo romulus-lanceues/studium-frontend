@@ -20,8 +20,6 @@ export default function useTimer() {
 
     const handleSessionCompletion = async () => {
       try {
-        console.log("Session completed, calling complete session API...");
-        // CALL COMPLETE SESSION API HERE
         await completeSession(currentSessionId);
         setTimerRunning(false);
         alert("Session completed!");
@@ -66,7 +64,6 @@ export default function useTimer() {
 
       const response = await createSession(subjectId, startSessionRequest);
 
-      console.log("Session created:", response);
       setCurrentSessionId(response.id);
       setSessionType(response.type);
       setNote("");

@@ -29,8 +29,6 @@ export default function Subject() {
     handlePreviousPage,
   } = useSubject(setFullScreenLoading);
 
-  console.log(subjects);
-
   return (
     <>
       <FullPageLoading show={fullScreenLoading} />
@@ -107,15 +105,15 @@ export default function Subject() {
             ))}
 
             {/* Will only appear at the final page */}
-
-            {currentPage === totalPages - 1 && (
+            {/* Under development removed for now */}
+            {/* {currentPage === totalPages - 1 && (
               <div className="subjects-add-card">
                 <div className="subjects-add-card__inner">
                   <div className="subjects-add-card__icon">+</div>
                   <p className="text-muted text-small">New Subject</p>
                 </div>
               </div>
-            )}
+            )} */}
           </div>
 
           {/* ── Pagination ─────────────────────────────────────────────────────

@@ -9,7 +9,6 @@ export const createSession = async (subjectId, startSessionRequest) => {
 
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -21,7 +20,6 @@ export const completeSession = async (sessionId) => {
     );
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -31,7 +29,6 @@ export const cancelSession = async (sessionId) => {
     const request = await client.patch(`/api/v1/sessions/${sessionId}/cancel`);
     if (request.status) return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };

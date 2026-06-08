@@ -34,7 +34,6 @@ export const signup = async (fullName, email, password) => {
     });
     return request;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -44,7 +43,6 @@ export const logout = async () => {
     const request = await client.post("/api/v1/auth/logout");
     return request;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };

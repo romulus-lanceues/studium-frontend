@@ -216,7 +216,7 @@ export default function CreateSubjectmodal({
                 min="1"
                 max="168"
               />
-              <span className="input-unit">hrs / week</span>
+              <span className="input-unit">sessions/ week</span>
             </div>
             {errors.weeklyGoal && (
               <span className="error-msg">{errors.weeklyGoal}</span>

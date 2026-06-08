@@ -32,13 +32,10 @@ export default function Signup() {
       console.error("Signup failed:", error);
     }
 
-    // Handle signup logic here
-    console.log("Signup submitted");
   };
 
-  const handleSocialSignup = (provider) => {
-    // Handle social signup logic here
-    console.log(`Signup with ${provider}`);
+  const handleSocialSignup = () => {
+    // Social signup integration can be added here.
   };
 
   return (

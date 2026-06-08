@@ -5,7 +5,6 @@ export const deleteSubject = async (subjectId) => {
     const request = await client.delete(`/api/v1/subject/delete/${subjectId}`);
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -15,7 +14,6 @@ export const createSubject = async (subjectData) => {
     const request = await client.post("/api/v1/subject/add", subjectData);
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -28,7 +26,6 @@ export const updateSubjectCall = async (subjectId, updatedData) => {
     );
     return request.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
